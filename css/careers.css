@@ -1,0 +1,394 @@
+/* Careers Page Styles */
+
+.page-hero {
+    background: var(--charcoal);
+    color: white;
+    text-align: center;
+    padding: 120px 0 80px;
+}
+
+.page-hero h1 {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.page-hero p {
+    font-size: 20px;
+    color: var(--muted-gray);
+}
+
+/* Why Work */
+.why-work {
+    background: white;
+}
+
+.why-work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.why-work-card {
+    padding: 32px;
+    background: var(--off-white);
+    border-radius: var(--radius);
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.why-work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.why-work-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.why-work-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.why-work-card p {
+    color: var(--muted-gray);
+    line-height: 1.7;
+}
+
+/* Open Positions */
+.open-positions {
+    background: var(--off-white);
+}
+
+.positions-list {
+    max-width: 900px;
+    margin: 48px auto 0;
+}
+
+.position-card {
+    background: white;
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+    transition: all var(--transition);
+}
+
+.position-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.position-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 24px;
+}
+
+.position-card h3 {
+    margin-bottom: 8px;
+}
+
+.position-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.position-type,
+.position-location {
+    font-size: 14px;
+    color: var(--muted-gray);
+}
+
+.position-type::before {
+    content: '💼 ';
+}
+
+.position-location::before {
+    content: '📍 ';
+}
+
+.position-desc {
+    color: var(--muted-gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.position-requirements {
+    margin-top: 20px;
+}
+
+.position-requirements strong {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.position-requirements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.position-requirements li {
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+    color: var(--muted-gray);
+    line-height: 1.6;
+}
+
+.position-requirements li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-weight: 700;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 14, 16, 0.8);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 40px 20px;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 48px;
+    border-radius: var(--radius);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--muted-gray);
+    transition: color var(--transition);
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.modal-close:hover {
+    color: var(--charcoal);
+}
+
+.modal-content h2 {
+    margin-bottom: 32px;
+}
+
+/* Application Form */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: Helvetica;
+    font-size: 16px;
+    transition: all var(--transition);
+    background: white;
+}
+
+.form-group input[type="file"] {
+    padding: 12px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    display: none;
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+.application-form .btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.form-status {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-status.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+}
+
+.form-status.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .page-hero h1 {
+        font-size: clamp(32px, 8vw, 48px);
+    }
+    
+    .page-hero p {
+        font-size: 18px;
+    }
+    
+    .why-work-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .why-work-card {
+        padding: 28px 24px;
+    }
+    
+    .position-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .apply-btn {
+        width: 100%;
+        margin-top: 16px;
+    }
+    
+    .position-card {
+        padding: 28px 24px;
+    }
+    
+    .position-card h3 {
+        font-size: 20px;
+    }
+    
+    .position-desc {
+        font-size: 15px;
+    }
+    
+    .modal {
+        padding: 20px;
+    }
+    
+    .modal-content {
+        padding: 32px 24px;
+    }
+    
+    .modal-content h2 {
+        font-size: 24px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 90px 0 50px;
+    }
+    
+    .page-hero h1 {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+    
+    .page-hero p {
+        font-size: 16px;
+    }
+    
+    .position-card {
+        padding: 24px 20px;
+    }
+    
+    .position-card h3 {
+        font-size: 18px;
+    }
+    
+    .position-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .modal-content {
+        padding: 28px 20px;
+    }
+    
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        font-size: 28px;
+    }
+}
